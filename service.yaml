@@ -1,0 +1,16 @@
+apiVersion:
+kind: Service
+metadata:
+  labels:
+    app: mynginx
+  name: mynginx
+  namespace: default
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: mynginx
+  type: 
