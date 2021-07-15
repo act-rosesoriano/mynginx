@@ -13,4 +13,18 @@ spec:
     targetPort: 8080
   selector:
     app: mynginx
-  type: 
+  type: ClusterIP
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: frontend-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api
+        backend:
+          serviceName: mynginx
+          servicePort: 80
+      

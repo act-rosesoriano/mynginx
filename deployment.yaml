@@ -22,17 +22,3 @@ spec:
         - containerPort: 80
           name: http
           protocol: TCP
-        resources: {}
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mywebapp1
-  labels:
-    app: mynginx
-spec:
-  containers:
-  - name: mynginx
-    image: rosesoriano/mynginx:v0.0.1
-    ports:
-      -containerPort: 80
